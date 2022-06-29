@@ -55,6 +55,10 @@ class EpochBasedRunner(BaseRunner):
             del self.data_batch
             self._iter += 1
 
+            print("Finished forward pass on one batch!")
+            
+            break
+
         self.call_hook('after_train_epoch')
         self._epoch += 1
 
