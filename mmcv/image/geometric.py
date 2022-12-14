@@ -276,8 +276,13 @@ def imrescale(
     Returns:
         ndarray: The rescaled image.
     """
+    print("Backend being used:", backend)
+
     h, w = img.shape[:2]
     new_size, scale_factor = rescale_size((w, h), scale, return_scale=True)
+
+    print("New size:", new_size)
+
     rescaled_img = imresize(
         img, new_size, interpolation=interpolation, backend=backend)
     if return_scale:
